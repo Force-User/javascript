@@ -1,1 +1,3 @@
-## JavaScript
+# JavaScript
+
+## 1. JavaScript coercion.
