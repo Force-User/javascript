@@ -1,0 +1,23 @@
+.block {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+  background-color: #ff1e00;
+  border-radius: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.button {
+  padding: 30px;
+  z-index: 1;
+}
