@@ -9,28 +9,18 @@ class User extends Entity {
     super(name);
     this._boxes = [];
   }
-  get boxes() {
-    return this._boxes;
-  }
-  addBox(boxName) {
-    this._boxes.push(new Box(boxName));
-  }
-  print() {
-    console.log(this);
+  addBox(box) {
+    this._boxes.push(box);
   }
 }
 
 class Box extends Entity {
   constructor(name) {
     super(name);
-    this._stuff = [];
+    this._items = [];
   }
-  addStuff(...stuff) {
-    this._stuff.push(
-      ...stuff.map((item) => {
-        return new Stuff(item);
-      })
-    );
+  addItem(item) {
+    this._items.push(item);
   }
 }
 
@@ -40,12 +30,11 @@ class Stuff extends Entity {
   }
 }
 
-const user1 = new User("Peter");
-const user2 = new User("John");
-user1.addBox("firstBox");
-user1.addBox("seconBox");
-user1.boxes[0].addStuff("Ручка", "Телефон");
-user1.print();
-user2.addBox("box");
-user2.boxes[0].addStuff("Car");
-user2.print();
+const user1 = new User("Ezio");
+const box1 = new Box("Weapons");
+const sword = new Stuff("Sword");
+const blade = new Stuff("Blade");
+box1.addItem(sword);
+box1.addItem(blade);
+user1.addBox(box1);
+console.log(user1);
