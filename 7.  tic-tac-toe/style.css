@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.area {
+  margin: 50px auto;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  box-shadow: 0 0 1px 1px black;
+  border-radius: 15px;
+  background-color: bisque;
+  overflow: hidden;
+}
+.cage {
+  width: 135px;
+  height: 135px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 1px 1px black;
+  font-size: 105px;
+  cursor: pointer;
+}
+.winner-screen {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: brown;
+  text-shadow: 1px 1px 1px black;
+}
+.winner-screen > h2 {
+  margin-bottom: 25px;
+  color: #fff;
+  font-size: 54px;
+}
+
+.winner-screen > h3 {
+  color: goldenrod;
+  font-size: 34px;
+}
+
+.winner-screen > button {
+  padding: 15px 45px;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  background-color: green;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.winner-screen > button:hover {
+  box-shadow: 0 0 3px 3px black;
+}
