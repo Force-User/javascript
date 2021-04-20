@@ -1,16 +1,5 @@
 let currentSym = null;
 let counter = 0;
-const combination = [
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
-  [1, 4, 7],
-  [2, 5, 8],
-  [3, 6, 9],
-  [1, 5, 9],
-  [3, 5, 7],
-];
-
 document.body.append(createArea());
 let elements = document.querySelectorAll(".cage");
 
@@ -45,14 +34,24 @@ function setSymToCage(element) {
 }
 
 function checkEndGame() {
-  for (let item of combination) {
+  const combinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+  ];
+  for (let combination of combinations) {
     if (
-      (elements[item[0] - 1].innerText === "X" &&
-        elements[item[1] - 1].innerText === "X" &&
-        elements[item[2] - 1].innerText === "X") ||
-      (elements[item[0] - 1].innerText === "O" &&
-        elements[item[1] - 1].innerText === "O" &&
-        elements[item[2] - 1].innerText === "O")
+      (elements[combination[0]].innerText === "X" &&
+        elements[combination[1]].innerText === "X" &&
+        elements[combination[2]].innerText === "X") ||
+      (elements[combination[0]].innerText === "O" &&
+        elements[combination[1]].innerText === "O" &&
+        elements[combination[2]].innerText === "O")
     ) {
       setTimeout(() => {
         hideGameArea();
@@ -86,10 +85,10 @@ function createWinnerScreen() {
   winnerScreen.classList.add("winner-screen");
 
   const winnerScreenTitle = document.createElement("h2");
-  winnerScreenTitle.innerText = "Game Over";
+  winnerScreenTitle.innerText = checkWinner();
 
   const winnerName = document.createElement("h3");
-  winnerName.innerText = checkWinner();
+  winnerName.innerText = "Game Over";
 
   const button = document.createElement("button");
   button.innerText = "Restart";
