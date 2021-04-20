@@ -1,0 +1,12 @@
+.table {
+  box-shadow: 0 0 3px 3px #000;
+}
+.table-header > td {
+  border: 1px solid #000;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.table-row > td {
+  border: 1px solid #000;
+  padding: 10px 20px;
+}
