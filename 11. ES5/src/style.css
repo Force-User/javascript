@@ -1,0 +1,27 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.form {
+  padding: 10px;
+  box-shadow: 0 0 3px 3px #ccc;
+  display: flex;
+  flex-direction: column;
+}
+.form > div:nth-of-type(n+2) {
+  margin-top: 20px;
+}
+
+.form__input {
+  padding:10px 20px;
+  margin-right: 20px;
+  border:none;
+  background-color: #ccc;
+}
+.select {
+  padding: 10px 20px;
+  border: none;
+  background-color: #ccc;
+}
